@@ -1,8 +1,12 @@
-<div data-vex-container>
+<div class="container" data-vex-container>
 	<video data-vex-video preload controls>
 		<source src="/video/dizzy.mp4" type="video/mp4">
 		<source src="http://html5demos.com/assets/dizzy.webm" type="video/webm">
 		<source src="http://html5demos.com/assets/dizzy.ogv" type="video/ogg">
 	</video>
-	<div data-vex-background data-vex-in=1 data-vex-out=10 style="background-image:url(https://lh4.googleusercontent.com/-Aa8byXw09oI/AAAAAAAAAAI/AAAAAAAAAAA/mmRW3f_I3rs/s27-c/photo.jpg)"></div>
+	<div data-vex-background data-vex-in=0 class="sky"></div>
+	<div data-vex-background data-vex-in=5 data-vex-duration=10 class="darksky"></div>
+	<img src="/images/moon.png" data-vex-in=2 data-vex-out=20 data-vex-duration=15 alt="" class="moon">
+	<div class="set" data-vex-in=1></div>
+	<div data-vex-background data-vex-in=24 style="background: black;"></div>
 </div>

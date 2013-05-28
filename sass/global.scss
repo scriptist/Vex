@@ -11,4 +11,52 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+
+/* Vex elements */
+.container {
+	background: black;
+}
+.set {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background: url(/images/set.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+
+	@include rotateX(90deg, 1000);
+	@include transform-origin(50%, 100%);
+	@include transition-timing-function(cubic-bezier(0,.25,.92,1));
+
+	&.vex-in {
+		@include rotateX(0deg, 1000);
+	}
+}
+.sky {
+	background: #241036;
+	@include background-image(linear-gradient(#19253d, #241036))
+}
+.darksky {
+	background: rgba(black, 0.5);
+}
+.moon {
+	position: absolute;
+
+	@include rotate(-70deg);
+	@include transform-origin(50%, 500%);
+	@include transition(all 1s);
+
+	&.vex-in {
+		@include rotate(0deg);
+	}
+
+	&.vex-out {
+		@include rotate(40deg);
+	}
 }

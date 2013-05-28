@@ -61,7 +61,10 @@ vex = {
 	},
 	elmTransition: function(elm, duration) {
 		if (duration = parseFloat(duration)) {
-			$(elm).css('transition', 'all ' + duration + 's');
+			$(elm).css({
+				'transition-property': 'all',
+				'transition-duration': duration + 's'
+			});
 		} else {
 			$(elm).css('transition', '');
 		}
