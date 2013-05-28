@@ -1,0 +1,58 @@
+$breakpoint-medium: 767px;
+$breakpoint-small: 500px;
+
+@mixin b($point) {
+	@if $point == medium {
+		@media (max-width: $breakpoint-medium) { @content; }
+	}
+	@else if $point == small {
+		@media (max-width: $breakpoint-small) { @content; }
+	}
+	@else {
+		@media (max-width: $point) { @content; }
+	}
+}
+
+
+[data-vex-container] {
+	text-align: center;
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+[data-vex-video] {
+	position: relative;
+	top: 20vh;
+	width: 700px;
+
+	max-width: 70%;
+
+	z-index: 10;
+
+	@include b(medium) {
+		max-width: 80%;
+	}
+}
+
+[data-vex-background] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 0;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	opacity: 0;
+
+	&.vex-in {
+		opacity: 1;
+	}
+}
